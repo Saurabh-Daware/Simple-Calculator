@@ -147,17 +147,17 @@ public class MainActivity extends AppCompatActivity {
 
         if (sub) {
             input.setText((value1 - value2) + "");
-            add = false;
+            sub = false;
         }
 
         if (multiply) {
             input.setText((value1 * value2) + "");
-            add = false;
+            multiply = false;
         }
 
         if (division) {
             input.setText((value1 / value2) + "");
-            add = false;
+            division = false;
         }
         sign.setText("");
 
@@ -181,7 +181,9 @@ public class MainActivity extends AppCompatActivity {
             str = str.substring(0, str.length() - 1);
             input.setText(str);
         } catch (Exception nfe) {
-
+            Context context = getApplicationContext();
+            Toast toast = Toast.makeText(context, R.string.toast_message, Toast.LENGTH_LONG);
+            toast.show();
         }
 
     }
