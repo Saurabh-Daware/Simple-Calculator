@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">Calculator</string>
+    <string name="btnBracket">()</string>
+    <string name="btnEqual">=</string>
+    <string name="btnDot">.</string>
+    <string name="btn0">0</string>
+    <string name="btn1">1</string>
+    <string name="btnPlus">+</string>
+    <string name="btnPercentage">%</string>
+    <string name="btnDivision">÷</string>
+    <string name="btnClear">C</string>
+    <string name="btnMultiply">×</string>
+    <string name="btn8">8</string>
+    <string name="btn9">9</string>
+    <string name="btn7">7</string>
+    <string name="btnMinus">-</string>
+    <string name="btn5">5</string>
+    <string name="btn6">6</string>
+    <string name="btn4">4</string>
+    <string name="btn2">2</string>
+    <string name="btn3">3</string>
+    <string name="btnLog">log</string>
+    <string name="btnLn">ln</string>
+    <string name="btnRaisedTo">X^a</string>
+    <string name="btnRoot">√x</string>
+    <string name="btnExpontential">!</string>
+    <string name="btnSin">Sin</string>
+    <string name="btnCos">Cos</string>
+    <string name="btnTan">tan</string>
+    <string name="toast_message">Error</string>
+    <string name="toast_message2">Enter a number first</string>
+</resources>
