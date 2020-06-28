@@ -9,9 +9,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
+
 public class MainActivity extends AppCompatActivity {
 
-    TextView input, sign;
+    TextView input, sign,output;
     double value1, value2;
     boolean add, sub, multiply, division, decimal;
 
@@ -23,6 +24,8 @@ public class MainActivity extends AppCompatActivity {
 
         input = findViewById(R.id.tvInput);
         sign = findViewById(R.id.tvSign);
+        output = findViewById(R.id.tvOutput);
+
     }
 
 
@@ -78,6 +81,9 @@ public class MainActivity extends AppCompatActivity {
 
     public void btnMinus(View view) {
         sign.setText(sign.getText() + "-");
+        String out;
+        out = input.getText().toString();
+        output.setText(out);
         if (input.getText().length() != 0) {
             value1 = Float.parseFloat(input.getText() + "");
             sub = true;
@@ -89,6 +95,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void btnPlus(View view) {
         sign.setText(sign.getText() + "+");
+
+        String out;
+        out = input.getText().toString();
+        output.setText(out);
+
         if (input.getText().length() != 0) {
             value1 = Float.parseFloat(input.getText() + "");
             add = true;
@@ -100,6 +111,9 @@ public class MainActivity extends AppCompatActivity {
 
     public void btnMultiply(View view) {
         sign.setText(sign.getText() + "×");
+        String out;
+        out = input.getText().toString();
+        output.setText(out);
         if (input.getText().length() != 0) {
             value1 = Float.parseFloat(input.getText() + "");
             multiply = true;
@@ -111,6 +125,9 @@ public class MainActivity extends AppCompatActivity {
 
     public void btnDivision(View view) {
         sign.setText(sign.getText() + "÷");
+        String out;
+        out = input.getText().toString();
+        output.setText(out);
         if (input.getText().length() != 0) {
             value1 = Float.parseFloat(input.getText() + "");
             division = true;
@@ -123,6 +140,7 @@ public class MainActivity extends AppCompatActivity {
     public void btnClear(View view) {
         input.setText("");
         sign.setText("");
+        output.setText("");
         value1 = 0.0;
         value2 = 0.0;
     }
@@ -139,25 +157,36 @@ public class MainActivity extends AppCompatActivity {
             }
         }
 
-        if (add) {
-            input.setText((value1 + value2) + "");
-            add = false;
+        try {
 
-        }
 
-        if (sub) {
-            input.setText((value1 - value2) + "");
-            sub = false;
-        }
+            if (add) {
+                input.setText((value1 + value2) + "");
+                output.setText("");
+                add = false;
 
-        if (multiply) {
-            input.setText((value1 * value2) + "");
-            multiply = false;
-        }
 
-        if (division) {
-            input.setText((value1 / value2) + "");
-            division = false;
+            }
+
+            if (sub) {
+                input.setText((value1 - value2) + "");
+                output.setText("");
+                sub = false;
+            }
+
+            if (multiply) {
+                input.setText((value1 * value2) + "");
+                output.setText("");
+                multiply = false;
+            }
+
+            if (division) {
+                input.setText((value1 / value2) + "");
+                output.setText("");
+                division = false;
+            }
+        }catch (Exception nfe){
+
         }
         sign.setText("");
 
