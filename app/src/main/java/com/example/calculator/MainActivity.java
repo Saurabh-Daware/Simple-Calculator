@@ -9,13 +9,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
-
 public class MainActivity extends AppCompatActivity {
 
     TextView input, sign,output;
     double value1, value2;
     boolean add, sub, multiply, division, decimal;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +23,6 @@ public class MainActivity extends AppCompatActivity {
         input = findViewById(R.id.tvInput);
         sign = findViewById(R.id.tvSign);
         output = findViewById(R.id.tvOutput);
-
     }
 
 
@@ -89,7 +86,6 @@ public class MainActivity extends AppCompatActivity {
             sub = true;
             decimal = false;
             input.setText("");
-
         }
     }
 
@@ -105,7 +101,6 @@ public class MainActivity extends AppCompatActivity {
             add = true;
             decimal = false;
             input.setText("");
-
         }
     }
 
@@ -119,7 +114,6 @@ public class MainActivity extends AppCompatActivity {
             multiply = true;
             decimal = false;
             input.setText("");
-
         }
     }
 
@@ -133,7 +127,6 @@ public class MainActivity extends AppCompatActivity {
             division = true;
             decimal = false;
             input.setText("");
-
         }
     }
 
@@ -146,7 +139,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void btnEqual(View view) {
-
         if (add || sub || multiply || division) {
             try {
                 value2 = Float.parseFloat(input.getText() + "");
@@ -158,14 +150,10 @@ public class MainActivity extends AppCompatActivity {
         }
 
         try {
-
-
             if (add) {
                 input.setText((value1 + value2) + "");
                 output.setText("");
                 add = false;
-
-
             }
 
             if (sub) {
@@ -185,11 +173,10 @@ public class MainActivity extends AppCompatActivity {
                 output.setText("");
                 division = false;
             }
-        }catch (Exception nfe){
-
+        } 
+        catch (Exception nfe){
         }
         sign.setText("");
-
     }
 
     public void btnDot(View view) {
@@ -197,7 +184,8 @@ public class MainActivity extends AppCompatActivity {
             Context context = getApplicationContext();
             Toast toast = Toast.makeText(context, R.string.toast_message, Toast.LENGTH_LONG);
             toast.show();
-        } else {
+        } 
+        else {
             input.setText(input.getText() + ".");
             decimal = true;
         }
@@ -209,12 +197,12 @@ public class MainActivity extends AppCompatActivity {
             str = input.getText().toString();
             str = str.substring(0, str.length() - 1);
             input.setText(str);
-        } catch (Exception nfe) {
+        } 
+        catch (Exception nfe) {
             Context context = getApplicationContext();
             Toast toast = Toast.makeText(context, R.string.toast_message, Toast.LENGTH_LONG);
             toast.show();
         }
-
     }
 }
 
